@@ -3,6 +3,8 @@ import json
 import os
 
 count = int(os.getenv("FILE_COUNT") or 10)
+# FILE_COUNT=25 python gen_receipts.py
+
 words = [word.strip() for word in open('/usr/share/dict/words').readlines()]
 
 for identifier in range(count):
@@ -14,4 +16,3 @@ for identifier in range(count):
     with open(f'./new/receipt-{identifier}.json', 'w') as f:
         json.dump(content, f)
 
-# FILE_COUNT=25 python gen_receipts.py
